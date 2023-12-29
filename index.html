@@ -1,133 +1,211 @@
-<!DOCTYPE HTML>
-<!--
-	Massively by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
-
-
+<!DOCTYPE html>
 <html>
-	<head>
-		<title>Manny's Website</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-	</head>
-	<body class="is-preload">
+<head>
+  <title>Manny Fluss Portfolio</title>
+  <style>
+    /* Style the navigation bar */
+    .topnav {
+      overflow: hidden;
+      background-color: #333;
+    }
 
-		<!-- Wrapper -->
-			<div id="wrapper" class="fade-in">
+    /* Style the links inside the navigation bar */
+    .topnav a {
+      float: left;
+      display: block;
+      color: #f2f2f2;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+    }
 
-				<!-- Intro -->
-					<div id="intro">
-					</div>
+    /* Change the color of links on hover */
+    .topnav a:hover {
+      background-color: #ddd;
+      color: black;
+    }
 
-				<!-- Header -->
+    /* Add an active class to highlight the current page */
+    .active {
+      background-color: #4CAF50;
+      color: white;
+    }
 
-				<!-- Nav -->
-					<nav id="nav">
-						<ul class="links">
+    /* Center the page */
+    .content {
+      max-width: 960px;
+      margin: auto;
+      text-align: center;
+      position: relative;
+      z-index: 1;
+      background-color: white;
+      padding: 20px;
+      border-radius: 10px;
+    }
 
-						</ul>
-						<ul class="icons">
-							<li><a href="https://www.linkedin.com/in/manny-fluss-853416228/" class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a></li>
-						</ul>
-					</nav>
+    /* Add horizontal and vertical lines */
+    hr {
+      border: none;
+      border-top: 1px solid #ccc;
+      margin: 20px 0;
+    }
 
-				<!-- Main -->
-					<div id="main">
+    .border {
+      border-left: 1px solid #ccc;
+      border-right: 1px solid #ccc;
+      padding: 20px;
+    }
 
-						<!-- Featured Post -->
-							<article class="post featured">
-								<header class="major">
-									<h2><a href="#">Manny Fluss'<br />
-									portfolio</a></h2>
-									<p>I am currently a third-year Computer Science: Game Design student at <br>
-										the University of California Santa Cruz. I  am self taught and <br>
-										these are a collection of games that were made during several game jams
-									</p>
-								</header>
-							</article>
-							<section class="posts">
-								<article>
-									<header>
+    /* Style the canvases */
+    #gradientCanvas, #boidsCanvas {
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 0;
+    }
+  </style>
+</head>
+<body>
+  <canvas id="gradientCanvas"></canvas>
+  <canvas id="boidsCanvas"></canvas>
+  <div class="topnav">
 
-										<h2><a>Intergalactic<br />
-										Smoothie CORP</a></h2>
-									</header>
-									<a class="image fit"><img src="images/game icon.png" class="pixel" alt="" /></a>
-									<p>A short inventory management game where you serve space-going customers with smoothies</p>
-									<ul class="actions special">
-										<li><a href="https://mannyonitch.itch.io/intergalactic-space-corp" target="_blank" class="button">Itch-Page</a></li>
-									</ul>
-								</article>
-								<!-- split -->
+  </div>
+  <div class="content">
+    <h1>Manny Fluss</h1>
+    <p>Graduate of University of California, Santa Cruz with a degree in Computer Science and Game Design</p>
+    <h2>Sample Text</h2>
+    <p>Here is some sample text for the section.</p>
+    <hr>
+    <h3>Subsection</h3>
+    <p>Here is a bit more text for the subsection.</p>
+    <div class="border">
+      <iframe frameborder="0" src="https://itch.io/embed/2361470" width="552" height="167"><a href="https://mannyonitch.itch.io/mannys-3d-game">Manny's 3D Game by MannyOnItch</a></iframe>
+      <h2>Shuffle City</h2>
+      <p>Shuffle City is a game created by banjo, MannyOnItch, and Menace02. You can play it by visiting the following link:</p>
+      <iframe frameborder="0" src="https://itch.io/embed/1552376" width="552" height="167"><a href="https://banjo-games.itch.io/shuffle-city">Shuffle City by banjo, MannyOnItch, Menace02</a></iframe>
+      <h2>Intergalactic Smoothie CORP</h2>
+      <p>Intergalactic Smoothie CORP is a game created by MannyOnItch. You can play it by visiting the following link:</p>
+      <iframe frameborder="0" src="https://itch.io/embed/1146020" width="552" height="167"><a href="https://mannyonitch.itch.io/intergalactic-space-corp">Intergalactic Smoothie CORP by MannyOnItch</a></iframe>
+    </div>
+  </div>
+  <script>
+    // Adjustable variables
 
+    //create a method that returns value 1
 
+    
+    var cohesionStrength = 0.00001;
+    var alignmentStrength = 0.010;
+    var separationStrength = 0.0001;
+    var speedLimit = 1;
+    var boidSize = 25; // Adjust this to change the size of the boids
 
-								<article>
-									<header>
+    var gradientCanvas = document.getElementById('gradientCanvas');
+    var gradientCtx = gradientCanvas.getContext('2d');
+    var boidsCanvas = document.getElementById('boidsCanvas');
+    var boidsCtx = boidsCanvas.getContext('2d');
 
-										<h2><a>Drawn Out<br />
-										</a></h2>
-									</header>
-									<a class="image fit"><img src="images/drawn-icon.png" alt="" /></a>
-									<p>An arena based surival game where you fend off drawings, discarded weapons get reborn as helpful towers</p>
-									<ul class="actions special">
-										<li><a href="https://mannyonitch.itch.io/drawn-out" target="_blank" class="button">Itch-Page</a></li>
-									</ul>
-								</article>
+    function resizeCanvas() {
+        gradientCanvas.width = window.innerWidth;
+        gradientCanvas.height = window.innerHeight;
+        boidsCanvas.width = window.innerWidth;
+        boidsCanvas.height = window.innerHeight;
+    }
+    window.addEventListener('resize', resizeCanvas);
+    resizeCanvas();
+    
+    var boids = [];
+    for (var i = 0; i < 100; i++) {
+        boids[i] = {
+            x: Math.random() * boidsCanvas.width,
+            y: Math.random() * boidsCanvas.height,
+            dx: Math.random() * 2 - 1,
+            dy: Math.random() * 2 - 1,
+            color: 'hsla(' + Math.random() * 360 + ', 100%, 80%, 1)'
+        };
+    }
 
-								<article>
-									<header>
-										
-										<h2><a>Grapple-Game<br />
-										</a></h2>
-									</header>
-									<a class="image fit"><img src="images/GrappleBoy.png" class="pixel"alt="" /></a>
-									<p>A short platformer level with a momentum-based grapple hook character.</p>
-									<ul class="actions special">
-										<li><a href="https://mannyonitch.itch.io/grapplegame" target="_blank" class="button">Itch-Page</a></li>
-									</ul>
-								</article>
+    function drawBoid(boid) {
+        boidsCtx.fillStyle = boid.color;
+        boidsCtx.beginPath();
+        boidsCtx.moveTo(boid.x, boid.y);
+        boidsCtx.lineTo(boid.x - boidSize * boid.dx - boidSize / 2 * boid.dy, boid.y - boidSize * boid.dy + boidSize / 2 * boid.dx);
+        boidsCtx.lineTo(boid.x - boidSize * boid.dx + boidSize / 2 * boid.dy, boid.y - boidSize * boid.dy - boidSize / 2 * boid.dx);
+        boidsCtx.closePath();
+        boidsCtx.fill();
+    }
 
+    function moveBoid(boid) {
+        var center = {x: 0, y: 0};
+        var avoid = {x: 0, y: 0};
+        var match = {dx: 0, dy: 0};
 
+        for (var i = 0; i < boids.length; i++) {
+            if (boid === boids[i]) continue;
 
+            var dx = boids[i].x - boid.x;
+            var dy = boids[i].y - boid.y;
+            var d = Math.sqrt(dx * dx + dy * dy);
 
-							</section>
+            if (d < 25) {
+                avoid.x -= dx;
+                avoid.y -= dy;
+            }
 
-						<!-- Footer -->
+            center.x += boids[i].x;
+            center.y += boids[i].y;
+            match.dx += boids[i].dx;
+            match.dy += boids[i].dy;
+        }
 
+        center.x /= boids.length - 1;
+        center.y /= boids.length - 1;
+        match.dx /= boids.length - 1;
+        match.dy /= boids.length - 1;
 
-					</div>
+        boid.dx += (center.x - boid.x) * cohesionStrength + avoid.x * separationStrength + (match.dx - boid.dx) * alignmentStrength;
+        boid.dy += (center.y - boid.y) * cohesionStrength + avoid.y * separationStrength + (match.dy - boid.dy) * alignmentStrength;
 
-				<!-- Footer -->
-					<footer id="footer">
+        var speed = Math.sqrt(boid.dx * boid.dx + boid.dy * boid.dy);
+        if (speed > speedLimit) {
+            boid.dx /= speed / speedLimit;
+            boid.dy /= speed / speedLimit;
+        }
 
-						<section class="split contact">
-							<section>
-								<h3>Email</h3>
-								<p><a>MannyF.oth@gmail.com</a></p>
-							</section>
-						</section>
-					</footer>
+        boid.x += boid.dx;
+        boid.y += boid.dy;
+        if (boid.x < 0) boid.x += boidsCanvas.width;
+        if (boid.y < 0) boid.y += boidsCanvas.height;
+        if (boid.x > boidsCanvas.width) boid.x -= boidsCanvas.width;
+        if (boid.y > boidsCanvas.height) boid.y -= boidsCanvas.height;
+    }
 
-				<!-- Copyright -->
-					<div id="copyright">
-						<ul><li>Design: <a href="https://html5up.net">HTML5 UP</a></li></ul>
-					</div>
+    var hue1 = Math.random() * 360;
+    var hue2 = (hue1 + 180) % 360;
+    var hueSpeed = 0.1;
 
-			</div>
+    function updateGradient() {
+        var gradient = gradientCtx.createLinearGradient(0, 0, gradientCanvas.width, gradientCanvas.height);
+        gradient.addColorStop(0, 'hsla(' + hue1 + ', 100%, 80%, 1)');
+        gradient.addColorStop(1, 'hsla(' + hue2 + ', 100%, 80%, 1)');
+        gradientCtx.fillStyle = gradient;
+        gradientCtx.fillRect(0, 0, gradientCanvas.width, gradientCanvas.height);
 
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.scrollex.min.js"></script>
-			<script src="assets/js/jquery.scrolly.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
+        hue1 = (hue1 + hueSpeed) % 360;
+        hue2 = (hue2 + hueSpeed) % 360;
+    }
 
-	</body>
+    function updateBoids() {
+        boidsCtx.clearRect(0, 0, boidsCanvas.width, boidsCanvas.height);
+        boids.forEach(drawBoid);
+        boids.forEach(moveBoid);
+        requestAnimationFrame(updateBoids);
+    }
+
+    setInterval(updateGradient, 1); // Update gradient every 1ms
+    updateGradient();
+    updateBoids();
+  </script>
+</body>
 </html>
