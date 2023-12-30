@@ -20,3 +20,4 @@ function carousel(container, index) {
     x[slideIndex[index]-1].style.opacity = "1";
     setTimeout(function() { carousel(container, index); }, rotationInterval);
 }
+
