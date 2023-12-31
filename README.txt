@@ -1,3 +1,4 @@
 Website in progress
-see here.
+
+Link to Deployed Website:
 https://mannyfluss.github.io/MannyFl/
