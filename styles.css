@@ -1,3 +1,26 @@
+    .imgCenter {
+
+    }
+
+    .game {
+        display: flex;
+        justify-content: space-between;
+        align-items: start;
+        margin-bottom: 20px;  /* Space between games */
+    }
+
+    .gameText {
+        flex: 0 0 40%;  /* Takes up 40% of the space */
+    }
+
+    .gameMedia {
+        flex: 0 0 60%;  /* Takes up 60% of the space */
+        display: flex;
+        flex-direction: column;
+    }
+   
+   
+   
    /* Style the navigation bar */
    .topnav {
     overflow: hidden;
@@ -154,8 +177,13 @@
       left: 0;
       width: 100%;
       height: 100%;
-      object-fit: cover;
+      object-fit: contain;
       opacity: 0;
       transition: opacity 2s;
+
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+
     }
 
