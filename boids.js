@@ -1,5 +1,5 @@
 var cohesionStrength = 0.00001;
-var alignmentStrength = 0.010;
+var alignmentStrength = 0.01;
 var separationStrength = 0.0001;
 var speedLimit = 1;
 var boidSize = 25; // Adjust this to change the size of the boids
