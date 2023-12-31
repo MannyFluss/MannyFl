@@ -4,6 +4,7 @@ var separationStrength = 0.0001;
 var speedLimit = 1;
 var boidSize = 25; // Adjust this to change the size of the boids
 
+
 var gradientCanvas = document.getElementById('gradientCanvas');
 var gradientCtx = gradientCanvas.getContext('2d');
 var boidsCanvas = document.getElementById('boidsCanvas');
@@ -50,7 +51,6 @@ function moveBoid(boid) {
         var dx = boids[i].x - boid.x;
         var dy = boids[i].y - boid.y;
         var d = Math.sqrt(dx * dx + dy * dy);
-
         if (d < 25) {
             avoid.x -= dx;
             avoid.y -= dy;
