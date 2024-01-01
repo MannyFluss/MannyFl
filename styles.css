@@ -1,4 +1,11 @@
-
+    @font-face {
+        font-family: "customFont";
+        src : url("Space_Mono/SpaceMono-Regular.ttf");
+    }
+    p {
+        font-family: "customFont",fallback, sans-serif;
+    }
+    
     .game {
         display: flex;
         justify-content: space-between;
@@ -76,13 +83,13 @@
         padding: 20px;
         border-radius: 10px;
         margin-bottom: 25px;
-        background: linear-gradient(-45deg, #ffffffc8, #f8f8f8c8, #f0f0f0c8, #e8e8e8c8);
-        
+        background: linear-gradient(-45deg, #ffffff5d, #f8f8f85d, #f0f0f05d, #e8e8e85d);
         background-size: 400% 400%;
-        
-
         animation: gradient 15s ease infinite;
     }
+
+
+
     .icons {
         display: flex;
         gap: 15px;
