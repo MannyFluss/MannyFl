@@ -7,6 +7,8 @@ window.onload = function() {
         slideIndex[i] = 0;
         carousel(containers[i], i);
     }
+    
+
 }
 
 function carousel(container, index) {
@@ -20,4 +22,5 @@ function carousel(container, index) {
     x[slideIndex[index]-1].style.opacity = "1";
     setTimeout(function() { carousel(container, index); }, rotationInterval);
 }
+
 

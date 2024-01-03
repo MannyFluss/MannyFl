@@ -157,7 +157,7 @@
     }
 
   /* Style the canvases */
-  #gradientCanvas, #boidsCanvas {
+  #gradientCanvas, #boidsCanvas, #fractalCanvas {
     position: fixed;
     top: 0;
     left: 0;
@@ -198,3 +198,15 @@
         font-size: 1.2em;  /* Make the text larger than the default */
         line-height: 1.5;  /* Increase the space between lines */
     }
+
+    h1 {
+        font-size: 2.5em; /* 2.5 times the size of the root font-size */
+      }
+      
+      h2 {
+        font-size: 2em; /* 2 times the size of the root font-size */
+      }
+      
+      h3 {
+        font-size: 1.75em; /* 1.75 times the size of the root font-size */
+      }
