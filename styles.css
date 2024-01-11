@@ -210,3 +210,16 @@
       h3 {
         font-size: 1.75em; /* 1.75 times the size of the root font-size */
       }
+
+
+      .game {
+        display: none;
+      }
+      
+      .game.active {
+        display: block;
+      }
+      
+      #leftButton, #rightButton {
+        /* Add your button styles here */
+      }

@@ -44,27 +44,31 @@
     <h1>Featured Games</h1>
     <p>These are games I have created over the past year with a variety of different tools. All games featured here are playable online through itch.io.</p>
     <hr>
-    <div class="game">
-        <div class="gameText">
-          <h2>MannyGame3D, 2023</h2>
-          <p class="gameBlurbText">MannyGame3D, title pending, is a 3D puzzle-platformer game created in the Godot game engine. It features a possession mechanic, where players
-            have to manually control several different characters in order to solve level objectives. <br><br>
-            This game was made using Godot 3D.
-          </p>
-        </div>
-        <div class="vertical-border"></div>
-        <div class="gameMedia">
-            <div class="image-container" style="height: 200px; margin-bottom: 20px; align-self: center;">
-              <img class="mySlides" src="https://img.itch.zone/aW1hZ2UvMjM2MTQ3MC8xNDM3MjQxMC5wbmc=/347x500/le9bt9.png">
-              <img class="mySlides" src="https://img.itch.zone/aW1hZ2UvMjM2MTQ3MC8xNDM3MjQwOC5wbmc=/347x500/IJiKzO.png">
-              <img class="mySlides" src="https://img.itch.zone/aW1hZ2UvMjM2MTQ3MC8xNDM3MjQwOS5wbmc=/347x500/flQ851.png">
-            </div>
-            <iframe frameborder="0" src="https://itch.io/embed/2361470" width="551" height="167"><a href="https://mannyonitch.itch.io/mannys-3d-game">Manny's 3D Game by MannyOnItch</a></iframe>
-        </div>
-    </div>
+    <div id= "GameTimeLine">
+      <button id="leftButton">Left</button>
+      <button id="rightButton">Right</button>
 
+      <div class="game" id="game1">
+          <div class="gameText">
+            <h2>MannyGame3D, 2023</h2>
+            <p class="gameBlurbText">MannyGame3D, title pending, is a 3D puzzle-platformer game created in the Godot game engine. It features a possession mechanic, where players
+              have to manually control several different characters in order to solve level objectives. <br><br>
+              This game was made using Godot 3D.
+            </p>
+          </div>
+          <div class="vertical-border"></div>
+          <div class="gameMedia">
+              <div class="image-container" style="height: 200px; margin-bottom: 20px; align-self: center;">
+                <img class="mySlides" src="https://img.itch.zone/aW1hZ2UvMjM2MTQ3MC8xNDM3MjQxMC5wbmc=/347x500/le9bt9.png">
+                <img class="mySlides" src="https://img.itch.zone/aW1hZ2UvMjM2MTQ3MC8xNDM3MjQwOC5wbmc=/347x500/IJiKzO.png">
+                <img class="mySlides" src="https://img.itch.zone/aW1hZ2UvMjM2MTQ3MC8xNDM3MjQwOS5wbmc=/347x500/flQ851.png">
+              </div>
+              <iframe frameborder="0" src="https://itch.io/embed/2361470" width="551" height="167"><a href="https://mannyonitch.itch.io/mannys-3d-game">Manny's 3D Game by MannyOnItch</a></iframe>
+          </div>
+      </div>
+    </div>
     <hr>
-    <div class="game">
+    <div class="game" id="game2">
       <div class="gameMedia">
         <div class="image-container" style="height: 200px; margin-bottom: 20px; align-self: center;">
           <img class="mySlides" src="https://img.itch.zone/aW1hZ2UvMTU1MjM3Ni85MTI1MTUyLnBuZw==/347x500/y94Nvv.png">
@@ -92,7 +96,7 @@ online games.
     </div>
 
     <hr>
-    <div class="game">
+    <div class="game" id="game3">
       <div class="gameText">
         <h2>Intergalactic Smoothie CORP, 2021</h2>
         <p class="gameBlurbText">Intergalactic Smoothie Corp was made during a three-day GameJam in
@@ -198,6 +202,7 @@ online games.
   <script src="boids.js"></script>
   <script src="carousel.js"></script>
   <script src="misc.js"></script>
+  <script src="interactiveSlides.js"></script>
 
 </body>
 </html>
