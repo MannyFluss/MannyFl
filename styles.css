@@ -6,23 +6,7 @@
         font-family: "customFont",fallback, sans-serif;
     }
     
-    .game {
-        display: flex;
-        justify-content: space-between;
-        align-items: start;
-        margin-bottom: 20px;  /* Space between games */
-    }
 
-    .gameText {
-        flex: 0 0 40%;  /* Takes up 40% of the space */
-    }
-
-    .gameMedia {
-        flex: 0 0 60%;  /* Takes up 60% of the space */
-        display: flex;
-        flex-direction: column;
-    }
-   
    
    
    /* Style the navigation bar */
@@ -211,15 +195,58 @@
         font-size: 1.75em; /* 1.75 times the size of the root font-size */
       }
 
-
-      .game {
-        display: none;
+      #GameTimeLine {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%; /* Full width */
       }
       
-      .game.active {
-        display: block;
+      #leftButtonContainer, #rightButtonContainer {
+        flex: 0 0 5%; /* Each button container takes up 5% of space */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      
+      #gameContainer {
+        flex: 0 0 90%; /* Game container takes up 90% of space */
+        position: relative;
+        height: 800px;
+        overflow: hidden; /* Hide overflow to prevent any element spillover */
       }
       
       #leftButton, #rightButton {
-        /* Add your button styles here */
+        background-color: transparent;
+        border: none;
+        font-size: 24px;
+        cursor: pointer;
+      }
+      
+      .game {
+        background-color: transparent;
+        visibility: hidden;
+        opacity: 0;
+        transition: visibility 0s linear 0.5s, opacity 0.5s linear;
+        height: 800px;
+        width: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+      
+      .game.active {
+        visibility: visible;
+        opacity: 1;
+        transition-delay: 0s;
+      }
+      
+      .gameText {
+        flex: 0 0 40%;
+      }
+      
+      .gameMedia {
+        flex: 0 0 60%;
+        display: flex;
+        flex-direction: column;
       }

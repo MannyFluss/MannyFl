@@ -12,15 +12,22 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   
     function changeGame(direction) {
-      document.querySelector('#game' + currentGameIndex).classList.remove('active');
-      currentGameIndex += direction;
-  
-      if (currentGameIndex > totalGames) {
-        currentGameIndex = 1;
-      } else if (currentGameIndex < 1) {
-        currentGameIndex = totalGames;
-      }
-  
-      document.querySelector('#game' + currentGameIndex).classList.add('active');
+        let currentGame = document.querySelector('#game' + currentGameIndex);
+        currentGame.classList.remove('active');
+    
+        setTimeout(() => {
+            currentGameIndex += direction;
+    
+            if (currentGameIndex > totalGames) {
+                currentGameIndex = 1;
+            } else if (currentGameIndex < 1) {
+                currentGameIndex = totalGames;
+            }
+    
+            let nextGame = document.querySelector('#game' + currentGameIndex);
+            nextGame.classList.add('active');
+        }, 500); // This matches the CSS transition time
     }
+
+
   });
