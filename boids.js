@@ -31,6 +31,7 @@ for (var i = 0; i < 100; i++) {
 }
 
 function drawBoid(boid) {
+    return
     boidsCtx.fillStyle = boid.color;
     boidsCtx.beginPath();
     boidsCtx.moveTo(boid.x, boid.y);

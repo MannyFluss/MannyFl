@@ -19,7 +19,7 @@
   .topnav a {
     float: left;
     display: block;
-    color: #f2f2f2;
+    color: #fff;
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
@@ -64,7 +64,7 @@
         padding: 20px;
         border-radius: 10px;
         margin-bottom: 25px;
-        background: linear-gradient(-45deg, #ffffff5d, #f8f8f85d, #f0f0f05d, #e8e8e85d);
+        background: #ffffffe0 ;/*linear-gradient(-45deg, #ffffff5d, #f8f8f85d, #f0f0f05d, #e8e8e85d);*/
         background-size: 400% 400%;
         animation: gradient 15s ease infinite;
     }
@@ -108,7 +108,7 @@
         padding: 20px;
         border-radius: 10px;
         margin-bottom: 25px;
-        background: linear-gradient(-45deg, #ffffffc8, #f8f8f8c8, #f0f0f0c8, #e8e8e8c8);
+        background: #fff;
         background-size: 400% 400%;
         animation: gradient 15s ease infinite;
 
@@ -138,7 +138,7 @@
     }
 
   /* Style the canvases */
-  #gradientCanvas, #boidsCanvas, #fractalCanvas {
+  #boidsCanvas, #fractalCanvas {
     position: fixed;
     top: 0;
     left: 0;
@@ -257,3 +257,40 @@
         display: flex;
         flex-direction: column;
       }
+
+      #timelineDots {
+        text-align: center;
+        margin-top: 20px; /* Adjust as needed */
+      }
+      
+      .dot {
+        height: 15px; /* Dot size */
+        width: 15px; /* Dot size */
+        background-color: #bbb; /* Dot color */
+        border-radius: 50%;
+        display: inline-block;
+        margin: 0 10px; /* Spacing between dots */
+      }
+      
+      .dot.active {
+        background-color: #333; /* Active dot color */
+      }
+
+      #gradientCanvas {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -2; /* Behind everything */
+    }
+    
+    #background-container {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1; /* On top of gradientCanvas, but behind other content */
+    }
+    

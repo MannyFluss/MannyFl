@@ -5,9 +5,17 @@
   <title>Manny Fluss Portfolio</title>
 </head>
 <body>
-  <canvas id="gradientCanvas"></canvas>
+
+  <!--
   <canvas id="boidsCanvas"></canvas>
-  <canvas id="fractalCanvas"></canvas>
+  
+  
+  <canvas id="gradientCanvas"></canvas>
+  -->
+  <div id="background-container"></div>
+
+
+
   <div class="headerContent">
     <h1>Manny Fluss</h1>
     <div class="logos">
@@ -121,7 +129,13 @@
         <button id="rightButton">></button>
       </div>
     </div>
-    <div id = "GameTimeLineProgress"></div>
+    <div id="timelineDots">
+      <!-- Repeat this dot for each project -->
+      <span class="dot"></span>
+      <span class="dot"></span>
+      <span class="dot active"></span> <!-- Example of a dot in focus -->
+      <!-- ... more dots as needed ... -->
+    </div>
   </div>
 
 
@@ -207,7 +221,12 @@
   <script src="boids.js"></script>
   <script src="carousel.js"></script>
   <script src="misc.js"></script>
+  <script src="background.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
+
+
   <script src="interactiveSlides.js"></script>
+
 
 </body>
 </html>
