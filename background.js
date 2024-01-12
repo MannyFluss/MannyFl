@@ -24,6 +24,7 @@ let xScale, yScale, centerX, centerY;
 //auto change
 let changeDuration = 3000;
 let lastChange = 0;
+let inFocus = true
 
 
 function getRandomPastelColor() {
@@ -39,7 +40,7 @@ function getRandomPastelColor() {
 function repeatFunction() {
     // Code to be executed repeatedly
     //max blob ct. 3000 seems reasonable, maybe if there is a way to determine performance
-	if (blobs.length > 3000)
+	if (blobs.length > 3000 || inFocus==false)
 	{
 		return; 
 	}
@@ -64,7 +65,6 @@ function repeatFunction() {
 const xMilliseconds = 100; // Replace 2000 with the desired number of milliseconds
 setInterval(repeatFunction, xMilliseconds);
 
-
 function setup() {
 
 
@@ -83,6 +83,18 @@ function setup() {
 	
 	colors = [color(getRandomPastelColor()), color(getRandomPastelColor()), 
         color(getRandomPastelColor()), color(getRandomPastelColor()), color(getRandomPastelColor())];
+
+
+	window.addEventListener('blur', function() {
+		// noLoop();
+		inFocus = false
+	});
+
+	// Resume sketch when the tab gains focus
+	window.addEventListener('focus', function() {
+		// loop();
+		inFocus = true
+	});
     
 }
 function draw() {

@@ -3,7 +3,31 @@ document.addEventListener('DOMContentLoaded', function() {
     const totalGames = document.querySelectorAll('.game').length;
     let isTransitioning = false;
     let autoChangeTimeout;
-//new
+//swipe funcs
+    let touchStartX = 0;
+    let touchEndX = 0;
+
+    function checkSwipeDirection() {
+        if (touchEndX < touchStartX) {
+            changeGame(1); // Left Swipe, go to next
+        }
+        if (touchEndX > touchStartX) {
+            changeGame(-1); // Right Swipe, go to previous
+        }
+    }
+
+    document.addEventListener('touchstart', function(e) {
+        touchStartX = e.changedTouches[0].screenX;
+    });
+
+    document.addEventListener('touchend', function(e) {
+        touchEndX = e.changedTouches[0].screenX;
+        checkSwipeDirection();
+    });
+
+
+////
+    //new
     const dots = document.querySelectorAll('#timelineDots .dot');
     dots.forEach(dot => {
         dot.addEventListener('click', function() {
