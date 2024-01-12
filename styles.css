@@ -206,6 +206,8 @@
         justify-content: center;
         align-items: stretch; /* Changed from center to stretch */
         height: 100%; /* Full height */
+        cursor: pointer;
+        user-select: none;
       }
       
       #leftButton, #rightButton {
@@ -218,7 +220,8 @@
         cursor: pointer;
         width: 100%; /* Full width of the container */
         height: 500px;
-        
+        cursor: pointer;
+        user-select: none;
          /* Full height of the container */
 
       }
@@ -270,10 +273,14 @@
         border-radius: 50%;
         display: inline-block;
         margin: 0 10px; /* Spacing between dots */
+        transition: transform 0.3s ease, background-color 0.3s ease; /* Smooth transition for transform and background-color */
+        cursor: pointer;
+        user-select: none;
       }
       
       .dot.active {
         background-color: #333; /* Active dot color */
+        transform: scale(1.35,1.35);
       }
 
       #gradientCanvas {

@@ -38,8 +38,13 @@ function getRandomPastelColor() {
 
 function repeatFunction() {
     // Code to be executed repeatedly
-    
-    for(let i = 0; i < (xScale)/4; i++){
+    //max blob ct. 3000 seems reasonable, maybe if there is a way to determine performance
+	if (blobs.length > 3000)
+	{
+		return; 
+	}
+
+	for(let i = 0; i < (xScale)/4; i++){
         let x = width * random() + random(-100, 100);
         let y = height * random() + random(-100, 100);
         var blob = {
@@ -80,7 +85,6 @@ function setup() {
         color(getRandomPastelColor()), color(getRandomPastelColor()), color(getRandomPastelColor())];
     
 }
-var bgColor = color(getRandomPastelColor())
 function draw() {
 	/*
 	//DEBUG

@@ -3,6 +3,22 @@ document.addEventListener('DOMContentLoaded', function() {
     const totalGames = document.querySelectorAll('.game').length;
     let isTransitioning = false;
     let autoChangeTimeout;
+//new
+    const dots = document.querySelectorAll('#timelineDots .dot');
+    dots.forEach(dot => {
+        dot.addEventListener('click', function() {
+            const slideNumber = parseInt(this.getAttribute('data-slide'));
+            changeGameToSlide(slideNumber);
+        });
+    });
+
+    function changeGameToSlide(slideNumber) {
+        if (currentGameIndex !== slideNumber) {
+            changeGame(slideNumber - currentGameIndex);
+        }
+    }
+
+//
 
     document.querySelector('#game' + currentGameIndex).classList.add('active');
     updateDots(currentGameIndex);
