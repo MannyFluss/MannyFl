@@ -32,10 +32,7 @@
   }
 
   /* Add an active class to highlight the current page */
-  .active {
-    background-color: #4CAF50;
-    color: white;
-  }
+
 
   /* Center the page */
   @keyframes gradient {
@@ -200,27 +197,36 @@
         align-items: center;
         justify-content: space-between;
         width: 100%; /* Full width */
+        
       }
       
       #leftButtonContainer, #rightButtonContainer {
-        flex: 0 0 5%; /* Each button container takes up 5% of space */
+        flex: 0 0 5% 5%; /* Each button container takes up 5% of space */
         display: flex;
         justify-content: center;
-        align-items: center;
-      }
-      
-      #gameContainer {
-        flex: 0 0 90%; /* Game container takes up 90% of space */
-        position: relative;
-        height: 800px;
-        overflow: hidden; /* Hide overflow to prevent any element spillover */
+        align-items: stretch; /* Changed from center to stretch */
+        height: 100%; /* Full height */
       }
       
       #leftButton, #rightButton {
+
         background-color: transparent;
-        border: none;
+        border: 3px solid #bbb; /* Added border with color #ccc */
+        border-radius: 5px; /* Rounded border */
         font-size: 24px;
+        color: #aaa;
         cursor: pointer;
+        width: 100%; /* Full width of the container */
+        height: 500px;
+        
+         /* Full height of the container */
+
+      }
+      #gameContainer {
+        flex: 0 0 80%; /* Game container takes up 90% of space */
+        position: relative;
+        height: 800px;
+        overflow: hidden; /* Hide overflow to prevent any element spillover */
       }
       
       .game {
@@ -247,6 +253,7 @@
       
       .gameMedia {
         flex: 0 0 60%;
+        
         display: flex;
         flex-direction: column;
       }
