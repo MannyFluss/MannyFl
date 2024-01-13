@@ -5,6 +5,10 @@
     p {
         font-family: "customFont",fallback, sans-serif;
     }
+    li{
+      font-family: "customFont",fallback, sans-serif;
+      text-align: left;
+    }
     
 
    
@@ -300,4 +304,27 @@
         height: 100%;
         z-index: -1; /* On top of gradientCanvas, but behind other content */
     }
-    
+    .vbox {
+      display: flex;
+      flex-direction: column;
+      height: 100%; /* Adjust as needed */
+  }
+  
+  .top-half {
+      flex: 1; /* Takes up half of the vbox */
+  }
+  
+  .hbox {
+      display: flex;
+      flex: 1; /* Takes up the other half of the vbox */
+  }
+  
+  .left-half, .right-half {
+      flex: 1; /* Each takes up 50% of the hbox */
+  }
+
+  .image-container {
+      height: 350px; /* Adjust as needed */
+      margin-bottom: 20px;
+      align-self: center; /* Center the images in the right-half */
+  }
