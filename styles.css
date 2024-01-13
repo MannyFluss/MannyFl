@@ -1,330 +1,261 @@
-    @font-face {
-        font-family: "customFont";
-        src : url("Space_Mono/SpaceMono-Regular.ttf");
-    }
-    p {
-        font-family: "customFont",fallback, sans-serif;
-    }
-    li{
-      font-family: "customFont",fallback, sans-serif;
-      text-align: left;
-    }
-    
+@font-face {
+  font-family: "customFont";
+  src: url("Space_Mono/SpaceMono-Regular.ttf");
+}
 
-   
-   
-   /* Style the navigation bar */
-   .topnav {
-    overflow: hidden;
-    background-color: #333;
-  }
+p, li {
+  font-family: "customFont", fallback, sans-serif;
+  text-align: left;
+}
 
-  /* Style the links inside the navigation bar */
-  .topnav a {
-    float: left;
-    display: block;
-    color: #fff;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-  }
+.topnav {
+  overflow: hidden;
+  background-color: #333;
+}
 
-  /* Change the color of links on hover */
-  .topnav a:hover {
-    background-color: #ddd;
-    color: black;
-  }
+.topnav a {
+  float: left;
+  display: block;
+  color: #fff;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
 
-  /* Add an active class to highlight the current page */
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
 
+.logoStyle {
+  width: 35px;
+  height: 35px;
+}
 
-  /* Center the page */
-  @keyframes gradient {
-        0% {background-position: 0% 50%;}
-        50% {background-position: 100% 50%;}
-        100% {background-position: 0% 50%;}
-    }
-    .logoStyle {
-        width: 35px;
-        height: 35px;
-    }
-    .logoStyleHeader {
-        width: 50px;
-        height: 50px; 
+.logoStyleHeader {
+  width: 50px;
+  height: 50px; 
+  transition: all 0.15s ease-in-out;
+}
 
-        transition: all 0.15s ease-in-out;  /* Smooth transition */
-    }
-    
-    .logoStyleHeader:hover {
-        transform: scale(1.3);  /* Increase width */
-         /* Increase height */
-    }
-    .content {
-        max-width: 960px;
-        margin: auto;
-        text-align: center;
-        position: relative;
-        z-index: 1;
-        padding: 20px;
-        border-radius: 10px;
-        margin-bottom: 25px;
-        background: #ffffffe0 ;/*linear-gradient(-45deg, #ffffff5d, #f8f8f85d, #f0f0f05d, #e8e8e85d);*/
-        background-size: 400% 400%;
-        animation: gradient 15s ease infinite;
-    }
+.logoStyleHeader:hover {
+  transform: scale(1.3);
+}
 
+.content, .headerContent {
+  max-width: 960px;
+  margin: auto;
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 25px;
+  background: #ffffffe0;
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite;
+  position: relative;
+  z-index: 1;
+}
 
+.content {
+  text-align: center;
+}
 
-    .icons {
-        display: flex;
-        gap: 15px;
-    }
-    .logos {
-        display: flex;
-        gap: 30px;
-    }
+.headerContent {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 
-    .profileDiv {
-        display: flex;
-        justify-content: space-between;
-        align-items: start;
-    }
+.icons, .logos {
+  display: flex;
+  gap: 15px;
+}
 
-    .profileText {
-        flex: 2;  /* Takes up 2/3 of the space */
-    }
+.profileDiv {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+}
 
-    .profileImage {
-        flex: 1;  /* Takes up 1/3 of the space */
-    }
+.profileText {
+  flex: 2;
+}
 
-    .profileImage img {
-        width: 100%;
-        height: auto;
-    }
+.profileImage {
+  flex: 1;
+}
 
-    
-    .headerContent {
-        max-width: 960px;
-        margin: auto;
-        position: relative;
-        z-index: 1;
-        padding: 20px;
-        border-radius: 10px;
-        margin-bottom: 25px;
-        background: #fff;
-        background-size: 400% 400%;
-        animation: gradient 15s ease infinite;
+.profileImage img {
+  width: 100%;
+  height: auto;
+}
 
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
+.myContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100px;
+}
 
-    }
+hr {
+  border: none;
+  border-top: 1px solid #ccc;
+  margin: 20px 0;
+}
 
-    .myContainer {
-        display: flex;
-        align-items: center;  /* Vertically aligns the text */
-        justify-content: center;  /* Horizontally aligns the text */
-        height: 100px;  /* Or any height you want */
-    }
+.vertical-border {
+  border-left: 1px solid #ccc;
+  align-self: stretch;
+  margin: 5px 5px;
+}
 
-  /* Add horizontal and vertical lines */
-  hr {
-    border: none;
-    border-top: 1px solid #ccc;
-    margin: 20px 0;
-  }
-  .vertical-border {
-        border-left: 1px solid #ccc;  /* Create a vertical border */
-        align-self: stretch;  /* Adjust as needed */
-        margin: 5px 5px;  /* Add some horizontal spacing */
-    }
+#boidsCanvas, #fractalCanvas, #gradientCanvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
 
-  /* Style the canvases */
-  #boidsCanvas, #fractalCanvas {
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 0;
-  }
-  .hbox-container {
-        display: flex;
-    }
+#gradientCanvas {
+  z-index: -2;
+}
 
-    .vbox {
-        flex: 1;
-    }
+#background-container {
+  z-index: -1;
+}
 
-    .image-container {
-      position: relative;
-      width: 500px;
-      height: 300px;
-    }
+.vbox {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
 
-    .mySlides {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: contain;
-      opacity: 0;
-      transition: opacity 2s;
+.top-half {
+  flex: 1;
+}
 
-      display: block;
-      margin-left: auto;
-      margin-right: auto;
+.hbox {
+  display: flex;
+  flex: 1;
+}
 
-    }
+.left-half, .right-half {
+  flex: 1;
+}
 
-    .gameBlurbText {
-        text-align: left;
-        font-size: 1.2em;  /* Make the text larger than the default */
-        line-height: 1.5;  /* Increase the space between lines */
-    }
+.image-container {
+  position: relative;
+  width: 500px;
+  height: 300px;
+}
 
-    h1 {
-        font-size: 2.5em; /* 2.5 times the size of the root font-size */
-      }
-      
-      h2 {
-        font-size: 2em; /* 2 times the size of the root font-size */
-      }
-      
-      h3 {
-        font-size: 1.75em; /* 1.75 times the size of the root font-size */
-      }
+.mySlides {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  opacity: 0;
+  transition: opacity 2s;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
 
-      #GameTimeLine {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        width: 100%; /* Full width */
-        
-      }
-      
-      #leftButtonContainer, #rightButtonContainer {
-        flex: 0 0 5% 5%; /* Each button container takes up 5% of space */
-        display: flex;
-        justify-content: center;
-        align-items: stretch; /* Changed from center to stretch */
-        height: 100%; /* Full height */
-        cursor: pointer;
-        user-select: none;
-      }
-      
-      #leftButton, #rightButton {
+.gameBlurbText {
+  text-align: left;
+  font-size: 1.2em;
+  line-height: 1.5;
+}
 
-        background-color: transparent;
-        border: 3px solid #bbb; /* Added border with color #ccc */
-        border-radius: 5px; /* Rounded border */
-        font-size: 24px;
-        color: #aaa;
-        cursor: pointer;
-        width: 100%; /* Full width of the container */
-        height: 500px;
-        cursor: pointer;
-        user-select: none;
-         /* Full height of the container */
+h1, h2, h3 {
+  text-align: center;
+}
 
-      }
-      #gameContainer {
-        flex: 0 0 80%; /* Game container takes up 90% of space */
-        position: relative;
-        height: 620px;
-        overflow: hidden; /* Hide overflow to prevent any element spillover */
-      }
-      
-      .game {
-        background-color: transparent;
-        visibility: hidden;
-        opacity: 0;
-        transition: visibility 0s linear 0.5s, opacity 0.5s linear;
-        height: 600px;
-        width: 100%;
-        position: absolute;
-        top: 0;
-        left: 0;
-      }
-      
-      .game.active {
-        visibility: visible;
-        opacity: 1;
-        transition-delay: 0s;
-      }
-      
-      .gameText {
-        flex: 0 0 40%;
-      }
-      
-      .gameMedia {
-        flex: 0 0 60%;
-        
-        display: flex;
-        flex-direction: column;
-      }
+h1 {
+  font-size: 2.5em;
+}
 
-      #timelineDots {
-        text-align: center;
-        margin-top: 20px; /* Adjust as needed */
-      }
-      
-      .dot {
-        height: 15px; /* Dot size */
-        width: 15px; /* Dot size */
-        background-color: #bbb; /* Dot color */
-        border-radius: 50%;
-        display: inline-block;
-        margin: 0 10px; /* Spacing between dots */
-        transition: transform 0.3s ease, background-color 0.3s ease; /* Smooth transition for transform and background-color */
-        cursor: pointer;
-        user-select: none;
-      }
-      
-      .dot.active {
-        background-color: #333; /* Active dot color */
-        transform: scale(1.35,1.35);
-      }
+h2 {
+  font-size: 2em;
+}
 
-      #gradientCanvas {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        z-index: -2; /* Behind everything */
-    }
-    
-    #background-container {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        z-index: -1; /* On top of gradientCanvas, but behind other content */
-    }
-    .vbox {
-      display: flex;
-      flex-direction: column;
-      height: 100%; /* Adjust as needed */
-  }
-  
-  .top-half {
-      flex: 1; /* Takes up half of the vbox */
-  }
-  
-  .hbox {
-      display: flex;
-      flex: 1; /* Takes up the other half of the vbox */
-  }
-  
-  .left-half, .right-half {
-      flex: 1; /* Each takes up 50% of the hbox */
-  }
+h3 {
+  font-size: 1.75em;
+}
 
-  .image-container {
-      height: 350px; /* Adjust as needed */
-      margin-bottom: 20px;
-      align-self: center; /* Center the images in the right-half */
-  }
+#GameTimeLine {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+#leftButtonContainer, #rightButtonContainer {
+  flex: 0 0 5%;
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  height: 100%;
+  cursor: pointer;
+  user-select: none;
+}
+
+#leftButton, #rightButton {
+  background-color: transparent;
+  border: 3px solid #bbb;
+  border-radius: 5px;
+  font-size: 24px;
+  color: #aaa;
+  cursor: pointer;
+  width: 100%;
+  height: 500px;
+}
+
+#gameContainer {
+  flex: 0 0 80%;
+  position: relative;
+  height: 620px;
+  overflow: hidden;
+}
+
+.game {
+  background-color: transparent;
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s linear 0.5s, opacity 0.5s linear;
+  height: 600px;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.game.active {
+  visibility: visible;
+  opacity: 1;
+  transition-delay: 0s;
+}
+
+#timelineDots {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.dot {
+  height: 15px;
+  width: 15px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  margin: 0 10px;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+  cursor: pointer;
+  user-select: none;
+}
+
+.dot.active {
+  background-color: #333;
+  transform: scale(1.35,1.35);
+}
