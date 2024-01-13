@@ -232,7 +232,7 @@
       #gameContainer {
         flex: 0 0 80%; /* Game container takes up 90% of space */
         position: relative;
-        height: 800px;
+        height: 620px;
         overflow: hidden; /* Hide overflow to prevent any element spillover */
       }
       
@@ -241,7 +241,7 @@
         visibility: hidden;
         opacity: 0;
         transition: visibility 0s linear 0.5s, opacity 0.5s linear;
-        height: 800px;
+        height: 600px;
         width: 100%;
         position: absolute;
         top: 0;
