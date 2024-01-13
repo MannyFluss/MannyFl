@@ -54,15 +54,11 @@ function repeatFunction() {
             size : random(1, 5),
             lastX : x,
             lastY : y,
-            color : colors[floor(random(colors.length))],
+            color : getRandomPastelColor(),
             direction : random(0.1, 1) * (random() > 0.5 ? 1 : -1)
         };
         blobs.push(blob);
     }
-	for(let i =0; i< colors.length;i++)
-	{
-		colors[i] = getRandomPastelColor()
-	}
 
 }
 
