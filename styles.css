@@ -116,12 +116,12 @@ hr {
   height: 100%;
 }
 
-#gradientCanvas {
-  z-index: -2;
-}
 
 #background-container {
   z-index: -1;
+  position: fixed;
+  align-self: center;
+  transform: scale(1.1,1.1);
 }
 
 .vbox {

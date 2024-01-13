@@ -59,6 +59,10 @@ function repeatFunction() {
         };
         blobs.push(blob);
     }
+	for(let i =0; i< colors.length;i++)
+	{
+		colors[i] = getRandomPastelColor()
+	}
 
 }
 
@@ -68,9 +72,9 @@ setInterval(repeatFunction, xMilliseconds);
 function setup() {
 
 
-	var canvas = createCanvas(windowWidth, windowHeight);
-    canvas.style('position', 'absolute'); // Positioning the canvas
-    canvas.style('z-index', '0'); // Placing the canvas behind other content
+	var canvas = createCanvas(windowWidth, windowHeight );
+    //canvas.style('position', 'absolute'); // Positioning the canvas
+    //canvas.style('z-index', '0'); // Placing the canvas behind other content
     canvas.parent('background-container'); // Setting the parent container for the canvas
 
 	textAlign(CENTER, CENTER);
