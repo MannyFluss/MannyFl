@@ -1,3 +1,10 @@
+lausanne -> headings
+
+responsibilities section
+skills used -> icons
+
+
+-------
 This is the format to create new htmls game sections
 <h2>This is the Title, Time</h2>
 
