@@ -3,6 +3,9 @@ lausanne -> headings
 responsibilities section
 skills used -> icons
 
+Generic Button
+
+
 
 -------
 This is the format to create new htmls game sections

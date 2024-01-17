@@ -61,9 +61,14 @@ p, li {
 }
 
 .headerContent {
+  background: #fff;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  z-index: 10;
 }
 
 .icons, .logos {
@@ -162,7 +167,7 @@ hr {
   display: block;
   margin-left: auto;
   margin-right: auto;
-  border: 5pxs;
+  border-radius: 10px;
 }
 
 .gameBlurbText {
@@ -204,16 +209,41 @@ h3 {
   user-select: none;
 }
 
-#leftButton, #rightButton {
+.otherButtonContainer {
+  justify-content: center;
+  align-items: stretch;
+  height: 100%;
+  cursor: pointer;
+  user-select: none;
+  margin: 20px;
+}
+
+#leftButton, #rightButton, .otherButton {
   background-color: transparent;
-  border: 3px solid #bbb;
+  border: 3px solid #555555;
   border-radius: 5px;
   font-size: 24px;
-  color: #aaa;
+  color: #444;
   cursor: pointer;
   width: 100%;
   height: 500px;
+  transition: all 0.1s ease-in-out;
 }
+#leftButton:hover, #rightButton:hover, .otherButton:hover {
+  transform: scale(1.05); /* Makes the button 10% larger */
+  border-color: #5757ff; /* Dark blue color on hover */
+  color: #00008B;
+
+
+}
+
+.otherButton {
+  height: fit-content;
+  padding: 2px 0; /* Equal padding on the top and bottom */
+  text-align: center;
+}
+
+
 
 #gameContainer {
   flex: 0 0 80%;
