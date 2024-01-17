@@ -218,7 +218,7 @@ h3 {
   margin: 20px;
 }
 
-#leftButton, #rightButton, .otherButton {
+#leftButton, #rightButton, .otherButton, .playButton {
   background-color: transparent;
   border: 3px solid #555555;
   border-radius: 5px;
@@ -229,7 +229,7 @@ h3 {
   height: 500px;
   transition: all 0.1s ease-in-out;
 }
-#leftButton:hover, #rightButton:hover, .otherButton:hover {
+#leftButton:hover, #rightButton:hover, .otherButton:hover, .playButton:hover {
   transform: scale(1.05); /* Makes the button 10% larger */
   border-color: #5757ff; /* Dark blue color on hover */
   color: #00008B;
@@ -237,10 +237,13 @@ h3 {
 
 }
 
-.otherButton {
+.otherButton,.playButton  {
   height: fit-content;
   padding: 2px 0; /* Equal padding on the top and bottom */
   text-align: center;
+}
+.playButton {
+  width: 75%;
 }
 
 
