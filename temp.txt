@@ -1,13 +1,12 @@
 create some tags that I can use for each of the projects
 
-Godot
-Unity
-JavaScript
-C# .Net
+Godot//
+Unity//
+JavaScript//
+C# + .Net //
 
-Group Project
+Group Project 
 Sprint Methodology
-Iterative Design
 
 .playButton {
   background-color: transparent;

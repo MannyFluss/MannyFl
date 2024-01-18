@@ -240,10 +240,11 @@ h3 {
   border-radius: 5px;
   font-size: 24px;
   color: #444;
+  font-size: .75em;
   cursor: pointer;
-  width: 200px;
+  width: fit-content;
   height: auto;
-  padding: 20px;
+  padding: 3px;
   transition: all 0.1s ease-in-out;
 }
 
