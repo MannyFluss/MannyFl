@@ -233,9 +233,20 @@ h3 {
   transform: scale(1.05); /* Makes the button 10% larger */
   border-color: #5757ff; /* Dark blue color on hover */
   color: #00008B;
-
-
 }
+ .skillTag {
+  background-color: transparent;
+  border: 3px solid #555555;
+  border-radius: 5px;
+  font-size: 24px;
+  color: #444;
+  cursor: pointer;
+  width: 200px;
+  height: auto;
+  padding: 20px;
+  transition: all 0.1s ease-in-out;
+}
+
 
 .otherButton,.playButton  {
   height: fit-content;
