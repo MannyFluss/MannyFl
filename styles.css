@@ -9,14 +9,15 @@ html, body {
 /* Desktop: portrait 60% on the left, text on the right */
 .page {
   display: flex;
-  min-height: 100vh;
+  height: 100vh;
+  height: 100svh;
+  overflow: hidden;
 }
 
 .portrait {
   flex: 0 0 60%;
-  height: 100vh;
-  position: sticky;
-  top: 0;
+  height: 100%;
+  padding: 2rem;
 }
 
 .portrait img {
@@ -74,13 +75,15 @@ html, body {
 @media (max-width: 768px) {
   .page {
     flex-direction: column;
+    height: auto;
+    overflow: visible;
   }
 
   .portrait {
     flex: none;
     width: 100%;
     height: 100svh;
-    position: static;
+    padding: 1rem;
   }
 
   .info {
