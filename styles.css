@@ -1,23 +1,39 @@
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
+:root {
+  /* x: the one spacing value used for every outer margin and the gap */
+  --x: max(24px, 8vmin);
+  --vh: 100vh;
+}
+
+@supports (height: 100svh) {
+  :root { --vh: 100svh; }
+}
+
 html, body {
+  height: 100%;
+  overflow: hidden;
   background: #fff;
   color: #111;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
-/* Desktop: portrait 60% on the left, text on the right */
+/* Landscape: square photo on the left, text on the right, x everywhere */
 .page {
   display: flex;
-  height: 100vh;
-  height: 100svh;
-  overflow: hidden;
+  flex-direction: row;
+  gap: var(--x);
+  padding: var(--x);
+  height: var(--vh);
+  width: 100vw;
 }
 
 .portrait {
-  flex: 0 0 60%;
-  height: 100%;
-  padding: 2rem;
+  flex: none;
+  /* largest square that fits the height, leaving the text at least 30% width */
+  --side: min(calc(var(--vh) - 2 * var(--x)), calc(70vw - 3 * var(--x)));
+  width: var(--side);
+  height: var(--side);
 }
 
 .portrait img {
@@ -29,17 +45,19 @@ html, body {
 
 .info {
   flex: 1;
+  min-width: 0;
+  min-height: 0;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   gap: 1.25rem;
-  padding: 4rem;
+  overflow: hidden;
 }
 
 .name {
-  font-size: 2.5rem;
+  font-size: clamp(1.75rem, 4vmin, 3rem);
   font-weight: 500;
   letter-spacing: -0.02em;
+  line-height: 1.1;
 }
 
 .tagline {
@@ -48,7 +66,7 @@ html, body {
 }
 
 .bio {
-  max-width: 32ch;
+  max-width: 36ch;
   line-height: 1.6;
   color: #333;
 }
@@ -57,7 +75,7 @@ html, body {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
-  margin-top: 1rem;
+  margin-top: 0.5rem;
 }
 
 .links a {
@@ -71,26 +89,24 @@ html, body {
   border-bottom-color: #111;
 }
 
-/* Phones: portrait fills the first screen, scroll down for text & links */
-@media (max-width: 768px) {
+/* Vertical: same layout rotated — photo on top, text below, no scroll */
+@media (orientation: portrait) {
   .page {
     flex-direction: column;
-    height: auto;
-    overflow: visible;
   }
 
   .portrait {
-    flex: none;
-    width: 100%;
-    height: 100svh;
-    padding: 1rem;
+    /* largest square that fits the width, leaving the text at least 30% height */
+    --side: min(calc(100vw - 2 * var(--x)), calc(0.7 * var(--vh) - 3 * var(--x)));
   }
 
   .info {
-    padding: 3rem 1.5rem 4rem;
+    gap: 0.9rem;
   }
 
-  .name {
-    font-size: 2rem;
+  .links {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 0.5rem 1.25rem;
   }
 }
