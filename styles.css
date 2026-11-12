@@ -89,6 +89,24 @@ html, body {
   border-bottom-color: #111;
 }
 
+/* Menu sway: each link drifts and tilts on a staggered loop, so the list
+   ripples like a hanging menu */
+.links a {
+  display: inline-block;
+  transform-origin: left center;
+  animation: sway 3.6s ease-in-out infinite;
+  animation-delay: calc(var(--i, 0) * -0.45s);
+}
+
+@keyframes sway {
+  0%, 100% { transform: translateX(0) rotate(-1.5deg); }
+  50%      { transform: translateX(10px) rotate(1.5deg); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .links a { animation: none; }
+}
+
 /* Vertical: same layout rotated — photo on top, text below, no scroll */
 @media (orientation: portrait) {
   .page {
