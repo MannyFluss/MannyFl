@@ -65,17 +65,18 @@ html, body {
   color: #555;
 }
 
-.bio {
-  max-width: 36ch;
-  line-height: 1.6;
-  color: #333;
-}
-
 .links {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
   margin-top: 0.5rem;
+}
+
+/* The small heading over each group of links */
+.label {
+  font-size: 0.85rem;
+  font-weight: 400;
+  color: #707070;
 }
 
 .links a {
@@ -89,24 +90,6 @@ html, body {
   border-bottom-color: #111;
 }
 
-/* Menu sway: each link drifts and tilts on a staggered loop, so the list
-   ripples like a hanging menu */
-.links a {
-  display: inline-block;
-  transform-origin: left center;
-  animation: sway 3.6s ease-in-out infinite;
-  animation-delay: calc(var(--i, 0) * -0.45s);
-}
-
-@keyframes sway {
-  0%, 100% { transform: translateX(0) rotate(-1.5deg); }
-  50%      { transform: translateX(10px) rotate(1.5deg); }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .links a { animation: none; }
-}
-
 /* Vertical: same layout rotated — photo on top, text below, no scroll */
 @media (orientation: portrait) {
   .page {
@@ -117,7 +100,11 @@ html, body {
     /* largest square that fits the width, leaving the text at least 30% height */
     --side: min(calc(100vw - 2 * var(--x)), calc(0.7 * var(--vh) - 3 * var(--x)));
   }
+}
 
+/* Little height for the text (upright, or a phone on its side): tighter
+   spacing, and each group's links run along one line so they all fit */
+@media (orientation: portrait), (max-height: 430px) {
   .info {
     gap: 0.9rem;
   }
@@ -126,5 +113,11 @@ html, body {
     flex-direction: row;
     flex-wrap: wrap;
     gap: 0.5rem 1.25rem;
+    margin-top: 0.25rem;
+  }
+
+  /* the heading keeps a line to itself; its links run along the next */
+  .label {
+    width: 100%;
   }
 }
